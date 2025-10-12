@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Portfolio and learning journal of Your Name — CS student exploring ML, Node.js/Express, and AI agents." />
-  <meta property="og:title" content="Your Name — Portfolio" />
-  <meta property="og:description" content="Internships, projects, and a learning log (with code, demos, and stories)." />
+  <title>Abhishek Dhaka — Portfolio</title>
+  <meta name="description" content="Portfolio and learning journal of Abhishek Dhaka — Applied ML researcher focused on LLMs, multimodal AI, and efficient model design." />
+  <meta property="og:title" content="Abhishek Dhaka — Portfolio" />
+  <meta property="og:description" content="Internships, projects, and a learning log (with code, demos, and research)." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://dummyimage.com/1200x630/111827/e5e7eb&text=Your+Name" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/111827/e5e7eb&text=Abhishek+Dhaka" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤖</text></svg>">
 
   <!-- Tailwind via CDN (zero build, perfect for GitHub Pages) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -32,9 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Optional: smooth anchor scrolling */
     html{scroll-behavior:smooth}
-    /* Code block styling */
     pre code {white-space: pre-wrap; word-wrap: break-word}
   </style>
 </head>
@@ -42,7 +40,7 @@
   <!-- Top Nav -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="text-lg font-extrabold tracking-tight">&lt;YourName /&gt;</a>
+      <a href="#home" class="text-lg font-extrabold tracking-tight">&lt;Abhishek Dhaka /&gt;</a>
       <nav class="hidden md:flex gap-6 text-sm font-medium">
         <a class="hover:text-indigo-600" href="#internships">Internships</a>
         <a class="hover:text-indigo-600" href="#projects">Projects</a>
@@ -51,9 +49,8 @@
       </nav>
       <div class="flex items-center gap-2">
         <a id="resumeLink" class="text-sm px-3 py-1.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90"
-           href="#" target="_blank" rel="noopener">Resume</a>
+           href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         <button id="themeToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
-          <!-- sun/moon icon -->
           <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0-1.414 1.414M7.05 16.95 5.636 18.364"/><circle cx="12" cy="12" r="4"/></svg>
           <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
@@ -66,8 +63,8 @@
     <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <p class="text-sm uppercase tracking-widest text-indigo-600 font-semibold">Hello!</p>
-        <h1 class="mt-2 text-4xl md:text-5xl font-extrabold leading-tight">I'm <span class="text-indigo-600">Your Name</span>, a CS student exploring ML, Node/Express & AI agents.</h1>
-        <p class="mt-4 text-slate-600 dark:text-slate-300">I like telling the story behind the work — not just the repo. Below is a living journal of internships, projects, and the stuff I’m learning as I go.</p>
+        <h1 class="mt-2 text-4xl md:text-5xl font-extrabold leading-tight">I'm <span class="text-indigo-600">Abhishek Dhaka</span>, an Applied ML researcher exploring LLMs, multimodal AI & efficient model design.</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">I love translating research into deployable systems—RAG, conversational agents, and small models that run fast. Below is a living journal of internships, projects, and what I’m learning.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#projects" class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">See Projects</a>
           <a href="#learning" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700">Learning Log</a>
@@ -79,7 +76,7 @@
         </div>
         <div class="absolute -bottom-4 -right-4 bg-white/80 dark:bg-slate-800/80 rounded-2xl p-4 shadow-card text-sm">
           <p class="font-semibold">Currently:</p>
-          <p id="currentlyText" class="text-slate-600 dark:text-slate-300">Learning Express.js and building my first AI agent 🔧🤖</p>
+          <p id="currentlyText" class="text-slate-600 dark:text-slate-300">Starting M.S. CS at UC San Diego; building efficient, multimodal AI systems.</p>
         </div>
       </div>
     </div>
@@ -117,7 +114,7 @@
   <section id="learning" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-extrabold">Learning Log</h2>
-      <p class="text-slate-600 dark:text-slate-300">Tiny experiments, notes, and code snippets (Node.js, Express, ML, agents).</p>
+      <p class="text-slate-600 dark:text-slate-300">Tiny experiments, notes, and code snippets (LLMs, multimodal, optimization).</p>
       <div class="mt-8 flex flex-wrap gap-2" id="learningTags"></div>
       <div id="learningList" class="mt-6 grid md:grid-cols-2 gap-6"></div>
     </div>
@@ -128,11 +125,11 @@
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
       <div class="md:col-span-2">
         <h2 class="text-3xl font-extrabold">About</h2>
-        <p id="aboutText" class="mt-4 text-slate-700 dark:text-slate-300">I'm a CS student who loves building things end‑to‑end: training ML models, wiring up APIs with Node/Express, and experimenting with AI agents. I enjoy documenting the journey so others can follow along (including the mistakes!).</p>
+        <p id="aboutText" class="mt-4 text-slate-700 dark:text-slate-300">Applied ML researcher focused on LLMs, multimodal AI (text + speech + vision), and efficient model design for real-world impact. Experienced in RAG, conversational agents, and optimizing small models for fast inference.</p>
         <div class="mt-6 flex gap-3">
-          <a id="githubLink" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">GitHub</a>
-          <a id="linkedinLink" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">LinkedIn</a>
-          <a id="emailLink" href="mailto:you@example.com" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">Email</a>
+          <a id="githubLink" href="https://github.com/abhishekdhakaab" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">GitHub</a>
+          <a id="linkedinLink" href="https://linkedin.com/in/abhishek-d-512a921a5" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">LinkedIn</a>
+          <a id="emailLink" href="mailto:abdhaka@ucsd.edu" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">Email</a>
         </div>
       </div>
       <aside class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-card">
@@ -148,7 +145,7 @@
 
   <footer class="py-10 border-t border-slate-200/70 dark:border-slate-800">
     <div class="max-w-6xl mx-auto px-4 text-sm flex flex-wrap items-center justify-between gap-4">
-      <p>© <span id="year"></span> Your Name. Built with Tailwind. No frameworks required.</p>
+      <p>© <span id="year"></span> Abhishek Dhaka. Built with Tailwind. No frameworks required.</p>
       <div class="flex items-center gap-3">
         <a href="#home" class="hover:text-indigo-600">Back to top ↑</a>
       </div>
@@ -157,88 +154,108 @@
 
   <!-- ===================== DATA: EDIT THIS ===================== -->
   <script>
-    // 🔧 Fill in your details here. You can always extend the schema as you like.
     const siteData = {
       owner: {
-        name: "Your Name",
-        resumeUrl: "#", // link to your PDF resume
-        github: "https://github.com/yourname",
-        linkedin: "https://www.linkedin.com/in/yourname/",
-        email: "you@example.com",
-        currently: "Learning Express.js and building my first AI agent",
+        name: "Abhishek Dhaka",
+        // Tip: place a copy named resume.pdf in the repo root (or replace with a public URL)
+        resumeUrl: "resume.pdf",
+        github: "https://github.com/abhishekdhakaab",
+        linkedin: "https://linkedin.com/in/abhishek-d-512a921a5",
+        email: "abdhaka@ucsd.edu",
+        currently: "Starting M.S. in CS at UC San Diego; building efficient, multimodal AI systems.",
         heroImage: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
-        about: "I'm a CS student who loves building things end‑to‑end: training ML models, wiring up APIs with Node/Express, and experimenting with AI agents.",
+        about: "Applied ML researcher focused on LLMs, multimodal AI (text + speech + vision), and efficient model design for real-world impact. Experienced in RAG, conversational agents, and small-model optimization.",
       },
       internships: [
         {
-          company: "Acme AI",
-          role: "ML Intern",
-          timeframe: "Jun–Aug 2024",
-          story: "I built a churn prediction pipeline and wrote about the metrics that actually mattered.",
-          results: ["AUC ↑ from 0.71 → 0.86", "Deployed batch inference on Airflow", "Cut feature compute cost by 35%"],
-          images: [
-            "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1200&auto=format&fit=crop"
+          company: "Noccarc Robotics",
+          role: "AI Intern",
+          timeframe: "Feb–Jun 2025",
+          story: "Led R&D for an autonomous ventilation system that combines ML with clinician input. Interviewed respiratory therapists and researched competing solutions to shape the roadmap. Built a CV model on simulated ventilator data (96% accuracy) and delivered tooling that enabled rapid supervised learning.",
+          results: [
+            "96% accuracy on simulated ventilator waveforms",
+            "Physics-based lung–ventilator simulator cut data collection from months → hours",
+            "Clinician annotation tool + roadmap presented; contributed to $1.14M raise and earned PPO"
           ],
-          links: [{label: "Write‑up", url: "#"}, {label: "Slides", url: "#"}],
+          images: [
+            "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop"
+          ],
+          links: [
+            { label: "Overview", url: "#" }
+          ],
         },
         {
-          company: "BetaCloud",
-          role: "Backend Intern (Node/Express)",
-          timeframe: "Jan–Mar 2025",
-          story: "Prototyped a rate‑limited REST API with JWT auth, CI checks, and OpenAPI docs.",
-          results: ["p95 latency 240ms", "100% typed DTOs", "GitHub Actions CI"],
-          images: [
-            "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+          company: "IIT Guwahati",
+          role: "ML Intern (Supervisor: Dr. Amit Awekar)",
+          timeframe: "Jun 2024 – Jan 2025",
+          story: "Focused on NLP, Transformers, and model compression. Proposed a sliding-window Alignment Adapter (AlAd) to align compressed embeddings with BERT-base, improving TinyBERT and enabling faster inference while retaining accuracy.",
+          results: [
+            "TinyBERT NER F1: 0.19 → 0.37 (+95%) at ~6% of BERT size",
+            "Up to 39% faster inference with ~20% latency overhead vs. BERT-base",
+            "Generalized across architectures; recovered up to +16 F1 on downstream tasks"
           ],
-          links: [{label: "API Spec", url: "#"}],
+          images: [
+            "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"
+          ],
+          links: [
+            { label: "Preprint", url: "https://www.dropbox.com/scl/fi/a3dwsaqa29i58rwdhsim5/PrePrint_Embedding_Matcher.pdf?rlkey=s6aqzd1uv0sjdod8aokoyidg2&dl=0" },
+            { label: "ACM DL", url: "https://dl.acm.org/doi/abs/10.1145/3630744.3663610" }
+          ],
+        },
+        {
+          company: "IIT BHU",
+          role: "ML Intern (Supervisor: Dr. Sukomal Pal)",
+          timeframe: "Jun–Oct 2023",
+          story: "Built multilingual hate/offense detection for code-mixed Hindi–English social media. Modeled nuanced categories (standalone hate, contextual hate, non-hate) using a hybrid of mBERT, Siamese BiLSTM, and rules; extended to six low-resource languages with robust preprocessing pipelines.",
+          results: [
+            "#2 at HASOC’23 (Task‑2A), Macro‑F1 = 0.7008",
+            "Macro‑F1 up to 0.78 (Sinhala) and 0.74 (Bodo) across 6 languages",
+            "Reproducible pipelines for 20K+ posts; proposed CRF-based span detection"
+          ],
+          images: [
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+          ],
+          links: [
+            { label: "CEUR Proceedings", url: "https://ceur-ws.org/Vol-3681/T6-15.pdf" }
+          ],
         }
       ],
       projects: [
         {
-          title: "Agentic Tutor",
-          tagline: "A small RAG + tool‑use agent that quizzes me on lecture notes.",
-          tech: ["Python", "LangChain", "OpenAI", "ChromaDB"],
-          description: "Built a local knowledge base and an agent to answer questions with sources. Added a feedback loop that stores tricky Q&A for later.",
-          demo: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // replace with your demo
-          code: "https://github.com/yourname/agentic-tutor",
-          cover: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
-          story: "Started from a minimal RAG example and iterated toward tool‑use (calculator + web scrape). The biggest lesson: evals over vibes.",
-        },
-        {
-          title: "Express URL Shortener",
-          tagline: "Tiny service with Prisma + SQLite and rate limiting.",
-          tech: ["Node", "Express", "Prisma", "SQLite"],
-          description: "Implements POST /shorten and GET /:id with cache headers, request validation, and simple analytics.",
+          title: "VisionTalk",
+          tagline: "Multimodal AI interaction (text–audio–video) with affect detection.",
+          tech: ["Python", "PyTorch", "OpenCV", "Flask", "LLMs"],
+          description: "Conversational assistant integrating speech-to-text, VQA, object detection, and LLMs for context-aware responses. Adds real-time emotion sensing (facial + audio) to adapt dialog.",
           demo: "#",
-          code: "https://github.com/yourname/express-shortener",
+          code: "https://github.com/abhishekdhakaab/Multimodal-AI-for-Personalised-Interactive-engagement-",
           cover: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-          story: "I focused on clean middleware and OpenAPI docs so others can fork quickly.",
+          story: "End-to-end pipeline with dynamic model routing and feedback adaptation; web UI via JavaScript, backend on Flask.",
         },
         {
-          title: "MNIST From Scratch",
-          tagline: "NumPy nets, no frameworks.",
-          tech: ["Python", "NumPy"],
-          description: "Implemented dense layers, ReLU, softmax cross‑entropy, and SGD with momentum.",
+          title: "Medical Query Assistance (Edge)",
+          tagline: "Domain LLM + RAG for rural clinics, CPU-only via QLoRA.",
+          tech: ["LoRA", "QLoRA", "RAG", "OCR", "Computer Vision"],
+          description: "Fine-tuned a domain LLM on doctor–patient dialogs and Q&As; deployed 4-bit QLoRA for offline, CPU-only inference. Combined textbook retrieval with CV on eye/skin images and OCR of labels for grounded answers.",
           demo: "#",
-          code: "https://github.com/yourname/mnist-numpy",
-          cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
-          story: "Training dynamics are a vibe check — visualizing loss made debugging 10× faster.",
+          code: "https://github.com/abhishekdhakaab/MedLlaMa_SIH_project",
+          cover: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1200&auto=format&fit=crop",
+          story: "Targeted low-connectivity settings; focused on robustness and small-model efficiency.",
         }
       ],
       learning: [
         {
-          title: "Express: Route Params & Validation",
-          date: "2025-09-14",
-          tags: ["node", "express"],
-          gist: "Got comfortable with route params, query parsing, and Zod validation.",
-          code: `// app.js\nimport express from 'express'\nimport { z } from 'zod'\nconst app = express()\nconst schema = z.object({ q: z.string().min(1) })\napp.get('/search', (req, res) => {\n  const parsed = schema.safeParse(req.query)\n  if (!parsed.success) return res.status(400).json(parsed.error)\n  res.json({ ok: true, q: parsed.data.q })\n})\napp.listen(3000)`
+          title: "Efficient NER: TinyBERT + AlAd",
+          date: "2025-01-20",
+          tags: ["nlp", "compression"],
+          gist: "Sliding-window Alignment Adapter improves TinyBERT NER F1 from 0.19 → 0.37 while staying ~6% of BERT size.",
+          code: `# toy sketch of adapter mapping compressed embeddings to BERT-base space\n# (illustrative only)\nclass AlAd(nn.Module):\n    def __init__(self, d_small, d_base):\n        super().__init__(); self.proj = nn.Linear(d_small, d_base)\n    def forward(self, x):\n        return self.proj(x)`
         },
         {
-          title: "ML: Stratified K‑Fold",
-          date: "2025-08-02",
-          tags: ["ml"],
-          gist: "Quick note on stratification to preserve class balance.",
-          code: `from sklearn.model_selection import StratifiedKFold\nskf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\nfor fold, (train_idx, val_idx) in enumerate(skf.split(X, y)):\n    print(fold, len(train_idx), len(val_idx))`
+          title: "Ventilator Waveform Simulation",
+          date: "2025-05-15",
+          tags: ["cv", "simulation", "healthcare"],
+          gist: "Physics-based lung–ventilator sim with PID and firmware sweeps to generate realistic waveforms for ML training.",
+          code: `# pseudo-code for PID sweep loop\nfor p, i, d in grid(P, I, D):\n    controller.set_params(p, i, d)\n    wave = simulate(patient_model, controller)\n    save(wave)`
         }
       ]
     };
@@ -246,7 +263,7 @@
 
   <!-- ===================== RENDERER ===================== -->
   <script>
-    // --- Theme toggle ---
+    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedTheme = localStorage.getItem('theme');
@@ -258,10 +275,10 @@
       localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     });
 
-    // --- Populate owner info ---
+    // Populate owner info
     document.title = `${siteData.owner.name} — Portfolio`;
     document.querySelectorAll('a[href="#home"], header a').forEach(a => {
-      if (a.textContent?.includes('YourName')) a.textContent = `<${siteData.owner.name} />`;
+      if (a.textContent?.includes('Abhishek')) a.textContent = `<${siteData.owner.name} />`;
     });
     document.getElementById('currentlyText').textContent = siteData.owner.currently;
     document.getElementById('heroImage').src = siteData.owner.heroImage;
@@ -272,7 +289,7 @@
     document.getElementById('emailLink').href = `mailto:${siteData.owner.email}`;
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- Internships timeline ---
+    // Internships timeline
     const iList = document.getElementById('internshipTimeline');
     siteData.internships.forEach((i, idx) => {
       const li = document.createElement('li');
@@ -292,7 +309,7 @@
       iList.appendChild(li);
     });
 
-    // --- Projects grid ---
+    // Projects grid
     const pGrid = document.getElementById('projectsGrid');
     siteData.projects.forEach(p => {
       const card = document.createElement('article');
@@ -318,7 +335,7 @@
       pGrid.appendChild(card);
     });
 
-    // --- Learning list + tags ---
+    // Learning list + tags
     const tagsEl = document.getElementById('learningTags');
     const listEl = document.getElementById('learningList');
     let activeTag = 'all';
@@ -335,7 +352,8 @@
       mk('all');
       allTags.forEach(mk);
     };
-    const escapeHtml = (s) => s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+    const escapeHtml = (s) => s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",
+">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
     const renderLearning = () => {
       listEl.innerHTML = '';
       siteData.learning
