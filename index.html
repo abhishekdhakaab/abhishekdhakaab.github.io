@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio and learning journal of Your Name — CS student exploring ML, Node.js/Express, and AI agents." />
+  <meta property="og:title" content="Your Name — Portfolio" />
+  <meta property="og:description" content="Internships, projects, and a learning log (with code, demos, and stories)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/111827/e5e7eb&text=Your+Name" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+
+  <!-- Tailwind via CDN (zero build, perfect for GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Arial"],
+          },
+          boxShadow: {
+            card: "0 10px 25px -10px rgba(0,0,0,0.25)",
+          },
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Optional: smooth anchor scrolling */
+    html{scroll-behavior:smooth}
+    /* Code block styling */
+    pre code {white-space: pre-wrap; word-wrap: break-word}
+  </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-display">
+  <!-- Top Nav -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="text-lg font-extrabold tracking-tight">&lt;YourName /&gt;</a>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a class="hover:text-indigo-600" href="#internships">Internships</a>
+        <a class="hover:text-indigo-600" href="#projects">Projects</a>
+        <a class="hover:text-indigo-600" href="#learning">Learning</a>
+        <a class="hover:text-indigo-600" href="#about">About</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a id="resumeLink" class="text-sm px-3 py-1.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90"
+           href="#" target="_blank" rel="noopener">Resume</a>
+        <button id="themeToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Toggle theme">
+          <!-- sun/moon icon -->
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0-1.414 1.414M7.05 16.95 5.636 18.364"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-indigo-600 font-semibold">Hello!</p>
+        <h1 class="mt-2 text-4xl md:text-5xl font-extrabold leading-tight">I'm <span class="text-indigo-600">Your Name</span>, a CS student exploring ML, Node/Express & AI agents.</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">I like telling the story behind the work — not just the repo. Below is a living journal of internships, projects, and the stuff I’m learning as I go.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#projects" class="px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500">See Projects</a>
+          <a href="#learning" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700">Learning Log</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-video rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 shadow-card overflow-hidden">
+          <img id="heroImage" alt="cover" class="w-full h-full object-cover opacity-90" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop"/>
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-white/80 dark:bg-slate-800/80 rounded-2xl p-4 shadow-card text-sm">
+          <p class="font-semibold">Currently:</p>
+          <p id="currentlyText" class="text-slate-600 dark:text-slate-300">Learning Express.js and building my first AI agent 🔧🤖</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships -->
+  <section id="internships" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-extrabold">Internships</h2>
+          <p class="text-slate-600 dark:text-slate-300">Stories, impact, and artifacts (pics, charts, and results).</p>
+        </div>
+        <div class="text-sm"><a class="hover:text-indigo-600" href="#internship-archive">Archive →</a></div>
+      </div>
+      <ol id="internshipTimeline" class="relative mt-10 border-s-l-2 border-slate-200 dark:border-slate-800 ms-4"></ol>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-extrabold">Projects</h2>
+          <p class="text-slate-600 dark:text-slate-300">Code, videos, and explanations. Click a card to expand the story.</p>
+        </div>
+        <div class="text-sm"><a class="hover:text-indigo-600" href="#projects-archive">All projects →</a></div>
+      </div>
+      <div id="projectsGrid" class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Learning -->
+  <section id="learning" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">Learning Log</h2>
+      <p class="text-slate-600 dark:text-slate-300">Tiny experiments, notes, and code snippets (Node.js, Express, ML, agents).</p>
+      <div class="mt-8 flex flex-wrap gap-2" id="learningTags"></div>
+      <div id="learningList" class="mt-6 grid md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- About / Contact -->
+  <section id="about" class="py-16 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-extrabold">About</h2>
+        <p id="aboutText" class="mt-4 text-slate-700 dark:text-slate-300">I'm a CS student who loves building things end‑to‑end: training ML models, wiring up APIs with Node/Express, and experimenting with AI agents. I enjoy documenting the journey so others can follow along (including the mistakes!).</p>
+        <div class="mt-6 flex gap-3">
+          <a id="githubLink" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">GitHub</a>
+          <a id="linkedinLink" href="#" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">LinkedIn</a>
+          <a id="emailLink" href="mailto:you@example.com" class="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-800">Email</a>
+        </div>
+      </div>
+      <aside class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-card">
+        <h3 class="font-bold">Site Notes</h3>
+        <ul class="mt-3 list-disc ms-5 text-sm text-slate-600 dark:text-slate-300">
+          <li>Edit the <code>siteData</code> JSON below to add your internships, projects, and learning posts.</li>
+          <li>Drop images/videos in an <code>assets/</code> folder (optional) and update URLs here.</li>
+          <li>Everything works as a single HTML file on GitHub Pages.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-slate-200/70 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-wrap items-center justify-between gap-4">
+      <p>© <span id="year"></span> Your Name. Built with Tailwind. No frameworks required.</p>
+      <div class="flex items-center gap-3">
+        <a href="#home" class="hover:text-indigo-600">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== DATA: EDIT THIS ===================== -->
+  <script>
+    // 🔧 Fill in your details here. You can always extend the schema as you like.
+    const siteData = {
+      owner: {
+        name: "Your Name",
+        resumeUrl: "#", // link to your PDF resume
+        github: "https://github.com/yourname",
+        linkedin: "https://www.linkedin.com/in/yourname/",
+        email: "you@example.com",
+        currently: "Learning Express.js and building my first AI agent",
+        heroImage: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop",
+        about: "I'm a CS student who loves building things end‑to‑end: training ML models, wiring up APIs with Node/Express, and experimenting with AI agents.",
+      },
+      internships: [
+        {
+          company: "Acme AI",
+          role: "ML Intern",
+          timeframe: "Jun–Aug 2024",
+          story: "I built a churn prediction pipeline and wrote about the metrics that actually mattered.",
+          results: ["AUC ↑ from 0.71 → 0.86", "Deployed batch inference on Airflow", "Cut feature compute cost by 35%"],
+          images: [
+            "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1200&auto=format&fit=crop"
+          ],
+          links: [{label: "Write‑up", url: "#"}, {label: "Slides", url: "#"}],
+        },
+        {
+          company: "BetaCloud",
+          role: "Backend Intern (Node/Express)",
+          timeframe: "Jan–Mar 2025",
+          story: "Prototyped a rate‑limited REST API with JWT auth, CI checks, and OpenAPI docs.",
+          results: ["p95 latency 240ms", "100% typed DTOs", "GitHub Actions CI"],
+          images: [
+            "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop"
+          ],
+          links: [{label: "API Spec", url: "#"}],
+        }
+      ],
+      projects: [
+        {
+          title: "Agentic Tutor",
+          tagline: "A small RAG + tool‑use agent that quizzes me on lecture notes.",
+          tech: ["Python", "LangChain", "OpenAI", "ChromaDB"],
+          description: "Built a local knowledge base and an agent to answer questions with sources. Added a feedback loop that stores tricky Q&A for later.",
+          demo: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // replace with your demo
+          code: "https://github.com/yourname/agentic-tutor",
+          cover: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+          story: "Started from a minimal RAG example and iterated toward tool‑use (calculator + web scrape). The biggest lesson: evals over vibes.",
+        },
+        {
+          title: "Express URL Shortener",
+          tagline: "Tiny service with Prisma + SQLite and rate limiting.",
+          tech: ["Node", "Express", "Prisma", "SQLite"],
+          description: "Implements POST /shorten and GET /:id with cache headers, request validation, and simple analytics.",
+          demo: "#",
+          code: "https://github.com/yourname/express-shortener",
+          cover: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+          story: "I focused on clean middleware and OpenAPI docs so others can fork quickly.",
+        },
+        {
+          title: "MNIST From Scratch",
+          tagline: "NumPy nets, no frameworks.",
+          tech: ["Python", "NumPy"],
+          description: "Implemented dense layers, ReLU, softmax cross‑entropy, and SGD with momentum.",
+          demo: "#",
+          code: "https://github.com/yourname/mnist-numpy",
+          cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop",
+          story: "Training dynamics are a vibe check — visualizing loss made debugging 10× faster.",
+        }
+      ],
+      learning: [
+        {
+          title: "Express: Route Params & Validation",
+          date: "2025-09-14",
+          tags: ["node", "express"],
+          gist: "Got comfortable with route params, query parsing, and Zod validation.",
+          code: `// app.js\nimport express from 'express'\nimport { z } from 'zod'\nconst app = express()\nconst schema = z.object({ q: z.string().min(1) })\napp.get('/search', (req, res) => {\n  const parsed = schema.safeParse(req.query)\n  if (!parsed.success) return res.status(400).json(parsed.error)\n  res.json({ ok: true, q: parsed.data.q })\n})\napp.listen(3000)`
+        },
+        {
+          title: "ML: Stratified K‑Fold",
+          date: "2025-08-02",
+          tags: ["ml"],
+          gist: "Quick note on stratification to preserve class balance.",
+          code: `from sklearn.model_selection import StratifiedKFold\nskf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\nfor fold, (train_idx, val_idx) in enumerate(skf.split(X, y)):\n    print(fold, len(train_idx), len(val_idx))`
+        }
+      ]
+    };
+  </script>
+
+  <!-- ===================== RENDERER ===================== -->
+  <script>
+    // --- Theme toggle ---
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // --- Populate owner info ---
+    document.title = `${siteData.owner.name} — Portfolio`;
+    document.querySelectorAll('a[href="#home"], header a').forEach(a => {
+      if (a.textContent?.includes('YourName')) a.textContent = `<${siteData.owner.name} />`;
+    });
+    document.getElementById('currentlyText').textContent = siteData.owner.currently;
+    document.getElementById('heroImage').src = siteData.owner.heroImage;
+    document.getElementById('aboutText').textContent = siteData.owner.about;
+    document.getElementById('resumeLink').href = siteData.owner.resumeUrl;
+    document.getElementById('githubLink').href = siteData.owner.github;
+    document.getElementById('linkedinLink').href = siteData.owner.linkedin;
+    document.getElementById('emailLink').href = `mailto:${siteData.owner.email}`;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- Internships timeline ---
+    const iList = document.getElementById('internshipTimeline');
+    siteData.internships.forEach((i, idx) => {
+      const li = document.createElement('li');
+      li.className = "mb-12 ms-6";
+      li.innerHTML = `
+        <span class="absolute -start-3.5 mt-1 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-white shadow-card">${idx+1}</span>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-card">
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="text-xl font-bold">${i.role} • ${i.company}</h3>
+            <span class="text-sm text-slate-500">${i.timeframe}</span>
+          </div>
+          <p class="mt-2 text-slate-700 dark:text-slate-300">${i.story}</p>
+          ${i.images?.length ? `<div class="mt-3 grid grid-cols-2 gap-3">${i.images.map(src=>`<img loading="lazy" src="${src}" class="rounded-xl border border-slate-200 dark:border-slate-700"/>`).join('')}</div>`:''}
+          ${i.results?.length ? `<ul class="mt-4 text-sm grid sm:grid-cols-3 gap-2">${i.results.map(r=>`<li class='bg-slate-100 dark:bg-slate-700 rounded-lg px-3 py-2'>${r}</li>`).join('')}</ul>`:''}
+          ${i.links?.length ? `<div class="mt-4 flex flex-wrap gap-2">${i.links.map(l=>`<a class='text-sm px-3 py-1.5 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500' target='_blank' rel='noopener' href='${l.url}'>${l.label}</a>`).join('')}</div>`:''}
+        </div>`;
+      iList.appendChild(li);
+    });
+
+    // --- Projects grid ---
+    const pGrid = document.getElementById('projectsGrid');
+    siteData.projects.forEach(p => {
+      const card = document.createElement('article');
+      card.className = "group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden shadow-card hover:-translate-y-0.5 transition-transform";
+      card.innerHTML = `
+        <div class="aspect-video overflow-hidden">
+          <img loading="lazy" src="${p.cover}" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="${p.title}"/>
+        </div>
+        <div class="p-5">
+          <h3 class="text-lg font-bold">${p.title}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">${p.tagline}</p>
+          <div class="mt-3 flex flex-wrap gap-2">${p.tech.map(t=>`<span class='text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700'>${t}</span>`).join('')}</div>
+          <details class="mt-4">
+            <summary class="cursor-pointer select-none text-sm underline">Read the story</summary>
+            <p class="mt-2 text-sm">${p.story}</p>
+          </details>
+          <p class="mt-3 text-sm">${p.description}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            ${p.code ? `<a class='px-3 py-1.5 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm' target='_blank' rel='noopener' href='${p.code}'>Code</a>`:''}
+            ${p.demo ? `<a class='px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-700 text-sm' target='_blank' rel='noopener' href='${p.demo}'>Demo</a>`:''}
+          </div>
+        </div>`;
+      pGrid.appendChild(card);
+    });
+
+    // --- Learning list + tags ---
+    const tagsEl = document.getElementById('learningTags');
+    const listEl = document.getElementById('learningList');
+    let activeTag = 'all';
+    const allTags = Array.from(new Set(siteData.learning.flatMap(l => l.tags))).sort();
+    const renderTags = () => {
+      tagsEl.innerHTML = '';
+      const mk = (t) => {
+        const btn = document.createElement('button');
+        btn.className = `px-3 py-1.5 rounded-xl border text-sm ${activeTag===t?'bg-indigo-600 text-white border-indigo-600':'border-slate-300 dark:border-slate-700'}`;
+        btn.textContent = t === 'all' ? 'All' : t;
+        btn.addEventListener('click', ()=>{ activeTag=t; renderTags(); renderLearning(); });
+        tagsEl.appendChild(btn);
+      }
+      mk('all');
+      allTags.forEach(mk);
+    };
+    const escapeHtml = (s) => s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+    const renderLearning = () => {
+      listEl.innerHTML = '';
+      siteData.learning
+        .filter(l=> activeTag==='all' || l.tags.includes(activeTag))
+        .sort((a,b)=> new Date(b.date)-new Date(a.date))
+        .forEach(l => {
+          const card = document.createElement('article');
+          card.className = "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-card";
+          card.innerHTML = `
+            <div class="flex items-center justify-between gap-3">
+              <h3 class="font-bold">${l.title}</h3>
+              <span class="text-xs text-slate-500">${new Date(l.date).toLocaleDateString()}</span>
+            </div>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">${l.gist}</p>
+            ${l.tags?.length ? `<div class="mt-3 flex flex-wrap gap-2">${l.tags.map(t=>`<span class='text-xs px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700'>${t}</span>`).join('')}</div>`:''}
+            ${l.code ? `<details class="mt-3"><summary class="text-sm underline cursor-pointer">View code</summary><pre class="mt-2 rounded-xl bg-slate-950 text-slate-100 overflow-x-auto p-4 text-xs"><code>${escapeHtml(l.code)}</code></pre></details>`:''}
+          `;
+          listEl.appendChild(card);
+        });
+    };
+    renderTags();
+    renderLearning();
+  </script>
+</body>
+</html>
