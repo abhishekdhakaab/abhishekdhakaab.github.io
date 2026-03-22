@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek Dhaka — ML Researcher & Engineer</title>
-<meta name="description" content="Portfolio of Abhishek Dhaka — ML Engineering, NLP, Multimodal AI, and Healthcare AI.">
+<title>Abhishek Dhaka — ML Engineer & Researcher</title>
+<meta name="description" content="Portfolio of Abhishek Dhaka — ML engineer and researcher working across language models, multimodal systems, AI infrastructure, and healthcare AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -380,6 +380,13 @@ a:hover { text-decoration: underline; }
   line-height: 1.7;
   margin-bottom: 0.75rem;
 }
+.project-highlights {
+  margin: 0 0 0.85rem 1.05rem;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.project-highlights li { margin-bottom: 0.3rem; }
 .project-links { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
 .project-link {
   display: inline-flex;
@@ -659,202 +666,352 @@ footer a { color: #ccc; }
 // ═══════════════════════════════════════════════════════════════
 
 const portfolioData = {
-
-  // ── PERSONAL INFO ──
-  name: "Abhishek Dhaka",
-  tagline: "ML Researcher & Engineer — building intelligent systems at the intersection of language, vision, and healthcare",
-  bio: "CS grad student at UC San Diego with a focus on making large models smaller, faster, and more useful. I've shipped autonomous ventilation models at Noccarc Robotics, published work on low-resource NLP at IIT Guwahati, and built multimodal AI systems that fuse speech, vision, and text. I care about work that moves from paper to production.",
-  photoUrl: "",
-  location: "San Diego, CA",
-  email: "abdhaka@ucsd.edu",
-  links: {
-    linkedin: "https://linkedin.com/in/YOUR-LINKEDIN",   // ← update
-    github: "https://github.com/YOUR-GITHUB",             // ← update
-    resume: "/Abhishek_Resume.pdf",                        // ← update path
-    scholar: "",
+  "name": "Abhishek Dhaka",
+  "tagline": "ML engineer and researcher working on language models, multimodal systems, and AI infrastructure",
+  "bio": "I am a CS grad student at UC San Diego building ML systems that have to hold up outside the lab: smaller models, noisy data, tight latency budgets, limited hardware, and users who need reliable answers. My work spans low-resource NLP, model compression, agentic systems, healthcare AI, and multimodal interaction. I like projects where the idea is strong, the evaluation is honest, and the system is useful enough to ship. This summer, I will be joining Qualcomm as an ML Engineering Intern.",
+  "photoUrl": "",
+  "location": "San Diego, CA",
+  "email": "abdhaka@ucsd.edu",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/abhishek-d-512a921a5/",
+    "github": "https://github.com/abhishekdhakaab",
+    "resume": "./Abhishek Resume 26.pdf",
+    "scholar": "https://scholar.google.com/citations?user=Nh-FlCcAAAAJ&hl=en&authuser=2"
   },
-
-  // ── EXPERIENCE ──
-  experience: {
-    show: true,
-    items: [
+  "experience": {
+    "show": true,
+    "items": [
       {
-        role: "ML Engineering Intern",
-        org: "Qualcomm",
-        orgUrl: "https://www.qualcomm.com",
-        location: "San Diego, CA",
-        date: "Summer 2026",
-        bullets: [
+        "role": "ML Engineering Intern",
+        "org": "Qualcomm",
+        "orgUrl": "https://www.qualcomm.com",
+        "location": "San Diego, CA",
+        "date": "Summer 2026",
+        "bullets": [
           "Incoming ML Engineering Intern."
         ],
-        tags: []
+        "tags": [
+          "Machine Learning",
+          "Systems",
+          "Applied AI"
+        ]
       },
       {
-        role: "AI Intern",
-        org: "Noccarc Robotics",
-        orgUrl: "https://www.noccarc.com",
-        location: "Pune, India",
-        date: "Feb 2025 – Jun 2025",
-        bullets: [
-          "Led development of an autonomous ventilation model achieving 96% accuracy on simulated data; translated clinician feedback and market research into the R&D roadmap.",
-          "Engineered a physics-based lung/ventilator simulator with PID control and automated firmware sweeps, generating realistic waveforms that cut ML training data collection from months to hours.",
-          "Built a clinician annotation tool for waveform labeling; packaged model experiments and presented results to stakeholders — contributed to a $1.14M raise and earned a pre-placement offer."
+        "role": "AI Intern",
+        "org": "Noccarc Robotics",
+        "orgUrl": "https://www.noccarc.com",
+        "location": "Pune, India",
+        "date": "Feb 2025 – Jun 2025",
+        "bullets": [
+          "Built an end-to-end ML pipeline for ventilator intelligence, covering waveform ingestion, physics-based simulation, synthetic data generation, model training, and clinician-in-the-loop tooling.",
+          "Engineered a lung–ventilator simulator that generated realistic pressure, flow, and volume waveforms, cutting data collection time from months to hours and enabling faster model iteration.",
+          "Trained waveform models to 96% accuracy on simulated data and built annotation and validation workflows used in clinical review; the work contributed to a $1.14M raise and a pre-placement offer."
         ],
-        tags: ["PyTorch", "Healthcare AI", "Simulation", "PID Control"]
+        "tags": [
+          "Healthcare AI",
+          "Simulation",
+          "PyTorch",
+          "Time-Series ML"
+        ]
       },
       {
-        role: "ML Research Intern",
-        org: "IIT Guwahati",
-        orgUrl: "",
-        location: "Guwahati, India",
-        date: "Jun 2024 – Jan 2025",
-        supervisor: "Dr. Amit Awekar",
-        bullets: [
-          "Proposed a sliding-window Alignment Adapter (AlAd) mapping compressed embeddings to BERT-base, boosting TinyBERT NER F1 from 0.19 → 0.37 (+95%) at ~6% of BERT size.",
-          "Evaluated across NER, POS, QA and multiple student models with 20% latency overhead and 35–39% faster inference vs. BERT-base.",
-          "Validated cross-architecture compression, recovering up to +16 F1 on downstream tasks while retaining small-model efficiency."
+        "role": "ML Research Intern",
+        "org": "IIT Guwahati",
+        "orgUrl": "",
+        "location": "Guwahati, India",
+        "date": "Jun 2024 – Jan 2025",
+        "supervisor": "Dr. Amit Awekar",
+        "bullets": [
+          "Proposed Alignment Adapter (AlAd), a lightweight module that aligns compressed-model embeddings with a large model's representation space to recover downstream performance after compression.",
+          "Improved BERT-Tiny from 19 to 43 NER F1 while keeping the model at roughly 6% of BERT-base size and preserving 2–2.8× speedup across NER, POS, and QA.",
+          "Showed that the method works across compression settings and architectures with only marginal size and latency overhead, and can complement PEFT methods such as LoRA."
         ],
-        tags: ["Model Compression", "NER", "BERT", "NLP"],
-        publication: { text: "Accepted at ACM IKDD CODS · Under review at SIGIR 2026", url: "" }
-      },
-      {
-        role: "ML Research Intern",
-        org: "IIT BHU, Varanasi",
-        orgUrl: "",
-        location: "Varanasi, India",
-        date: "Jun 2023 – Oct 2023",
-        supervisor: "Dr. Sukomal Pal",
-        bullets: [
-          "Ranked #2 at HASOC'23 with a hybrid model (mBERT + Siamese BiLSTM + rules), achieving Macro-F1 of 0.7008 for code-mixed hate-speech detection.",
-          "Trained FastText-CNN, BiLSTM-Attn, mBERT/XLM-R/BengaliBERT across 6 low-resource languages, reaching Macro-F1 up to 0.78 (Sinhala), 0.74 (Bodo).",
-          "Built reproducible preprocessing and training pipelines for 20K+ multilingual posts."
+        "tags": [
+          "Model Compression",
+          "Representation Learning",
+          "NLP",
+          "BERT"
         ],
-        tags: ["Low-resource NLP", "Hate Speech Detection", "mBERT", "Multilingual"],
-        publication: { text: "Published at FIRE 2023 (ACM DL)", url: "" }
-      },
-    ]
-  },
-
-  // ── EDUCATION ──
-  education: {
-    show: true,
-    items: [
-      {
-        school: "University of California, San Diego",
-        degree: "M.S. in Computer Science",
-        date: "Sep 2025 – Jun 2027",
-        location: "San Diego, CA",
-        detail: "Courses: Systems for LLMs, Software Engineering"
+        "publication": {
+          "text": "Alignment Adapter to Improve the Performance of Compressed Deep Learning Models",
+          "url": "./2602.14635v1.pdf"
+        }
       },
       {
-        school: "B.K. Birla Institute of Engineering & Technology, Pilani",
-        degree: "B.Tech in Computer Science & Engineering",
-        date: "Oct 2021 – Jun 2025",
-        location: "Pilani, India",
-        detail: "GPA: 3.79/4.0 · Sarla Birla Scholar · Courses: ML, AI, DSA, DBM"
+        "role": "ML Research Intern",
+        "org": "IIT BHU, Varanasi",
+        "orgUrl": "",
+        "location": "Varanasi, India",
+        "date": "Jun 2023 – Oct 2023",
+        "supervisor": "Dr. Sukomal Pal",
+        "bullets": [
+          "Built a context-aware hate-speech detection system for Hindi–English code-mixed conversations by modeling post, comment, and reply structure instead of treating each text in isolation.",
+          "Ranked #2 at HASOC 2023 with Macro-F1 0.70 using a hybrid pipeline that combined mBERT, Siamese learning, sequential modeling, and rule-based decision logic.",
+          "Extended the work to low-resource multilingual settings across 6+ languages, reaching F1 up to 0.78 on Sinhala and 0.74 on Bodo."
+        ],
+        "tags": [
+          "Low-resource NLP",
+          "Multilingual Modeling",
+          "mBERT",
+          "Hate Speech Detection"
+        ],
+        "publication": {
+          "text": "Published at WebSci 2024 and FIRE 2023",
+          "url": "./3630744.3663610.pdf"
+        }
       }
     ]
   },
-
-  // ── PROJECTS ──
-  projects: {
-    show: true,
-    items: [
+  "education": {
+    "show": true,
+    "items": [
       {
-        title: "LLM Inference Relay & Optimization Platform",
-        status: "ongoing",
-        description: "Production-grade LLM serving platform with policy-driven routing (prompt length, latency SLOs, task type), multi-layer caching (exact + semantic via embeddings), and a two-lane scheduler for tail-latency optimization under burst traffic.",
-        githubUrl: "",
-        videoUrl: "",
-        liveUrl: "",
-        tags: ["LLM Serving", "Systems", "Caching", "Optimization"]
+        "school": "University of California, San Diego",
+        "degree": "M.S. in Computer Science",
+        "date": "Sep 2025 – Jun 2027",
+        "location": "San Diego, CA",
+        "detail": "Courses: Systems for LLMs, Software Engineering"
       },
       {
-        title: "Autonomous AI Operations Agent",
-        status: "ongoing",
-        description: "Agentic system that investigates operational issues via structured tool use, step-by-step reasoning traces, and evidence-grounded explanations. Includes a post-training pipeline (SFT + DPO-style preference optimization) to improve tool selection and grounded reasoning over time.",
-        githubUrl: "",
-        videoUrl: "",
-        liveUrl: "",
-        tags: ["Agentic AI", "SFT", "DPO", "Tool Use"]
-      },
-      {
-        title: "VisionTalk: Multimodal AI Interaction System",
-        status: "completed",
-        description: "Conversational assistant integrating speech-to-text, VQA, object detection, and LLMs to deliver context-aware responses grounded in audio + video signals. Features real-time emotion detection (facial + audio cues) to dynamically adapt dialogue without explicit labels.",
-        githubUrl: "",
-        videoUrl: "",
-        liveUrl: "",
-        tags: ["Multimodal AI", "VQA", "Emotion Detection", "Flask"]
-      },
-      {
-        title: "Medical Query Assistance System",
-        status: "completed",
-        description: "Fine-tuned a domain LLM with LoRA on 1K doctor–patient dialogues + 2K Q&As; deployed 4-bit QLoRA (~65% smaller) for offline CPU-only inference — enabling edge AI in low-connectivity rural clinics. Includes a RAG pipeline combining textbook retrieval with CV on eye/skin images and OCR of medicine labels.",
-        githubUrl: "",
-        videoUrl: "",
-        liveUrl: "",
-        tags: ["Healthcare AI", "LoRA", "RAG", "Edge Deployment"]
+        "school": "B.K. Birla Institute of Engineering & Technology, Pilani",
+        "degree": "B.Tech in Computer Science & Engineering",
+        "date": "Oct 2021 – Jun 2025",
+        "location": "Pilani, India",
+        "detail": "GPA: 3.79/4.0 · Sarla Birla Scholar · Top 5% of class"
       }
     ]
   },
-
-  // ── PUBLICATIONS ──
-  publications: {
-    show: true,
-    items: [
+  "projects": {
+    "show": true,
+    "items": [
       {
-        title: "Alignment Adapters for Compressed Language Models",
-        venue: "Accepted at ACM IKDD CODS · Under review at SIGIR 2026",
-        authors: "Abhishek Dhaka, Amit Awekar",
-        url: ""
+        "title": "LLM Relay — Policy-Driven Inference Gateway",
+        "status": "ongoing",
+        "description": "A local-first inference gateway that treats LLM serving as a systems problem rather than a bare API call.",
+        "githubUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "highlights": [
+          "Built YAML-driven routing, Redis exact caching, pgvector semantic caching, and a fair two-lane scheduler with admission control.",
+          "Benchmarked 135 prompts on Llama 3.1 8B: exact cache cut p50 latency from 10.5s to 6.2ms (1,690×), while semantic caching reached 80% accuracy with 0 false positives.",
+          "Served 30 concurrent requests with zero crashes and graceful degradation on 9.6% of overload cases."
+        ],
+        "tags": [
+          "LLM Serving",
+          "FastAPI",
+          "Redis",
+          "pgvector",
+          "Scheduling"
+        ]
       },
       {
-        title: "Hybrid Hate Speech Detection for Code-Mixed Text",
-        venue: "FIRE 2023 — Published in ACM Digital Library",
-        authors: "Abhishek Dhaka, Sukomal Pal",
-        url: ""
+        "title": "Autonomous AI Operations Agent",
+        "status": "ongoing",
+        "description": "A multi-agent investigation system that retrieves runbook context, chooses diagnostic tools, validates its own conclusions, and returns evidence-backed actions.",
+        "githubUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "highlights": [
+          "Built a 7-node LangGraph workflow with planner, retriever, drafter, validator, and action stages around typed metrics, logs, and deployment tools.",
+          "Trained the planner with SFT + GRPO using a fully automatic reward function over 100 procedurally generated scenarios and 6 root-cause classes.",
+          "SFT improved reward by 14.5%, raised strong completions from 82% to 100%, and cut inference time from 7.0s to 4.0s per scenario."
+        ],
+        "tags": [
+          "LangGraph",
+          "SFT",
+          "GRPO",
+          "Tool Use",
+          "Agentic AI"
+        ]
+      },
+      {
+        "title": "AutoEval Lab — Autonomous LLM Capability Profiling",
+        "status": "ongoing",
+        "description": "An evaluation framework for profiling what local LLMs can actually be trusted to do, with confidence intervals, significance testing, prompt strategy analysis, and architecture comparisons.",
+        "githubUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "highlights": [
+          "Ran 700+ evaluations across 4 local models and 7 task types using GSM8K, ARC, and structured synthetic tasks.",
+          "Showed that 67% of small-sample model comparisons were not statistically significant, despite apparent accuracy gaps.",
+          "Found that advanced prompting degraded sub-1B models by 5–30 percentage points and that 1B Llama beat 1B Gemma by 35 points on instruction following."
+        ],
+        "tags": [
+          "LLM Evaluation",
+          "Statistics",
+          "Benchmarking",
+          "GSM8K",
+          "ARC"
+        ]
+      },
+      {
+        "title": "MedLLaMA — Multimodal Medical AI Assistant",
+        "status": "completed",
+        "description": "A medical assistant built for low-connectivity settings, combining a fine-tuned LLM, retrieval, image understanding, and OCR.",
+        "githubUrl": "",
+        "videoUrl": "",
+        "liveUrl": "",
+        "highlights": [
+          "Fine-tuned on roughly 3K medical samples (1K doctor–patient dialogues and 2K Q&A pairs) and deployed 4-bit QLoRA for CPU-only inference.",
+          "Cut model size by about 65%, making the system practical for low-resource devices instead of cloud-only deployment.",
+          "Grounded answers with retrieval and extended the pipeline to skin and eye images plus medicine-label OCR."
+        ],
+        "tags": [
+          "Healthcare AI",
+          "QLoRA",
+          "RAG",
+          "OCR",
+          "Multimodal"
+        ]
+      },
+      {
+        "title": "VisionTalk — Multimodal AI Interaction System",
+        "status": "completed",
+        "description": "A single interface for voice, video, document, table, and visual queries, designed to return grounded responses and speak them back to the user.",
+        "githubUrl": "",
+        "videoUrl": "./visiontalk-demo.mp4",
+        "liveUrl": "",
+        "highlights": [
+          "Integrated Whisper speech recognition, YOLOv5 object detection, BLIP visual question answering, TAPAS table QA, and retrieval-based document QA in one Flask application.",
+          "Logged interaction history, inferred facial and audio emotion signals, and adapted responses using both spoken and visual context.",
+          "Built an end-to-end demo that handled live video queries, document and table question answering, image generation, and audio responses."
+        ],
+        "tags": [
+          "Multimodal AI",
+          "Whisper",
+          "YOLOv5",
+          "BLIP",
+          "Flask"
+        ]
       }
     ]
   },
-
-  // ── SKILLS ──
-  skills: {
-    show: true,
-    groups: [
+  "publications": {
+    "show": true,
+    "items": [
       {
-        label: "AI / ML",
-        items: ["LLMs", "NLP", "Multimodal AI", "RAG", "Conversational Agents", "Model Compression"]
+        "title": "Alignment Adapter to Improve the Performance of Compressed Deep Learning Models",
+        "venue": "Accepted at ACM IKDD CODS · Under review at SIGIR 2026",
+        "authors": "Rohit Raj Rai, Abhishek Dhaka, Amit Awekar",
+        "url": "./2602.14635v1.pdf"
       },
       {
-        label: "Tools & Frameworks",
-        items: ["Python", "PyTorch", "TensorFlow", "Spark", "SQL", "AWS", "JavaScript", "Node.js"]
+        "title": "Towards Safer Online Spaces: Deep Learning for Hate Speech Detection in Code-Mixed Social Media Conversations",
+        "venue": "WebSci Companion 2024",
+        "authors": "Supriya Chanda, Abhishek Dhaka, Sukomal Pal",
+        "url": "./3630744.3663610.pdf"
       },
       {
-        label: "Applied Domains",
-        items: ["Generative AI", "Agentic AI", "Healthcare AI", "Human-Robot Interaction", "Low-resource NLP"]
+        "title": "Crossing Borders: Multilingual Hate Speech Detection",
+        "venue": "FIRE 2023",
+        "authors": "Supriya Chanda, Abhishek Dhaka, Sukomal Pal",
+        "url": "./T6-15.pdf"
       }
     ]
   },
-
-  // ── JOURNEY TIMELINE ──
-  // type: "internship" | "milestone" | "education"
-  // For bars (internship/education): provide start and end as "YYYY-MM"
-  // For milestones: provide start only (end is ignored)
-  journey: {
-    show: true,
-    startYear: 2022,  // ← left edge of the chart
-    endYear: 2027,    // ← right edge of the chart
-    items: [
-      { label: "B.Tech — BKBIET Pilani", type: "education", start: "2021-10", end: "2025-06" },
-      { label: "ML Intern — IIT BHU", type: "internship", start: "2023-06", end: "2023-10" },
-      { label: "HASOC'23 — Ranked #2", type: "milestone", start: "2023-10" },
-      { label: "Published at FIRE 2023 (ACM DL)", type: "milestone", start: "2023-12" },
-      { label: "ML Intern — IIT Guwahati", type: "internship", start: "2024-06", end: "2025-01" },
-      { label: "AI Intern — Noccarc Robotics", type: "internship", start: "2025-02", end: "2025-06" },
-      { label: "Paper at ACM IKDD CODS", type: "milestone", start: "2025-03" },
-      { label: "M.S. — UC San Diego", type: "education", start: "2025-09", end: "2027-06" },
-      { label: "ML Intern — Qualcomm", type: "internship", start: "2026-06", end: "2026-09" },
+  "skills": {
+    "show": true,
+    "groups": [
+      {
+        "label": "AI / ML",
+        "items": [
+          "LLMs",
+          "NLP",
+          "Multimodal Systems",
+          "RAG",
+          "Agentic AI",
+          "Model Compression",
+          "LLM Evaluation"
+        ]
+      },
+      {
+        "label": "Tools & Frameworks",
+        "items": [
+          "Python",
+          "PyTorch",
+          "FastAPI",
+          "LangGraph",
+          "PostgreSQL",
+          "Redis",
+          "pgvector",
+          "Docker",
+          "AWS",
+          "JavaScript"
+        ]
+      },
+      {
+        "label": "Applied Areas",
+        "items": [
+          "AI Infrastructure",
+          "Healthcare AI",
+          "Low-resource NLP",
+          "Reasoning Systems",
+          "Human-Computer Interaction"
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "show": true,
+    "startYear": 2021,
+    "endYear": 2027,
+    "items": [
+      {
+        "label": "B.Tech — BKBIET Pilani",
+        "type": "education",
+        "start": "2021-10",
+        "end": "2025-06"
+      },
+      {
+        "label": "ML Intern — IIT BHU",
+        "type": "internship",
+        "start": "2023-06",
+        "end": "2023-10"
+      },
+      {
+        "label": "HASOC'23 — Ranked #2",
+        "type": "milestone",
+        "start": "2023-10"
+      },
+      {
+        "label": "FIRE 2023 paper",
+        "type": "milestone",
+        "start": "2023-12"
+      },
+      {
+        "label": "WebSci 2024 paper",
+        "type": "milestone",
+        "start": "2024-05"
+      },
+      {
+        "label": "ML Intern — IIT Guwahati",
+        "type": "internship",
+        "start": "2024-06",
+        "end": "2025-01"
+      },
+      {
+        "label": "AI Intern — Noccarc Robotics",
+        "type": "internship",
+        "start": "2025-02",
+        "end": "2025-06"
+      },
+      {
+        "label": "CODS acceptance",
+        "type": "milestone",
+        "start": "2025-03"
+      },
+      {
+        "label": "M.S. — UC San Diego",
+        "type": "education",
+        "start": "2025-09",
+        "end": "2027-06"
+      },
+      {
+        "label": "ML Intern — Qualcomm",
+        "type": "internship",
+        "start": "2026-06",
+        "end": "2026-09"
+      }
     ]
   }
 };
@@ -949,6 +1106,7 @@ function render() {
                 <span class="project-status ${p.status}">${p.status === 'ongoing' ? 'Ongoing' : 'Completed'}</span>
               </div>
               <div class="project-desc">${p.description}</div>
+              ${p.highlights?.length ? `<ul class="project-highlights">${p.highlights.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}
               <div class="project-links">
                 ${p.githubUrl ? `<a href="${p.githubUrl}" class="project-link" target="_blank">${icons.github} Code</a>` : ''}
                 ${p.videoUrl ? `<a href="${p.videoUrl}" class="project-link" target="_blank">${icons.video} Demo</a>` : ''}
