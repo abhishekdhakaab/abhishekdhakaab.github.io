@@ -1,7 +1,1131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> hello</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek Dhaka — ML Researcher & Engineer</title>
+<meta name="description" content="Portfolio of Abhishek Dhaka — ML Engineering, NLP, Multimodal AI, and Healthcare AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PORTFOLIO CONFIG — STYLES
+   Edit these CSS variables to change colors/fonts globally
+   ============================================================ */
+:root {
+  --color-bg: #FAFAF7;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+  --color-text-tertiary: #8A8A8A;
+  --color-accent: #2D5A3D;
+  --color-accent-light: #E8F0EB;
+  --color-border: #E8E8E4;
+  --color-border-hover: #D0D0CC;
+  --color-tag-bg: #F0F0EC;
+  --color-tag-text: #4A4A4A;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-width: 820px;
 
+  /* ── Section band colors (subtle alternating tints) ── */
+  --band-hero: #FAFAF7;
+  --band-experience: #FFFFFF;
+  --band-education: #F5F7FA;
+  --band-projects: #FFFCF5;
+  --band-publications: #F8F6FA;
+  --band-skills: #F4FAF6;
+
+  /* ── Section accent stripe colors ── */
+  --stripe-experience: #2D5A3D;
+  --stripe-education: #4A6FA5;
+  --stripe-projects: #9A7B2E;
+  --stripe-publications: #7B5A9E;
+  --stripe-skills: #3D7A8A;
+
+  /* ── Journey timeline colors ── */
+  --band-journey: #F9FAFB;
+  --stripe-journey: #4A6FA5;
+  --tl-internship: #2D5A3D;
+  --tl-internship-bg: #d5e8db;
+  --tl-milestone: #7B5A9E;
+  --tl-milestone-bg: #e8ddf2;
+  --tl-education: #4A6FA5;
+  --tl-education-bg: #d6e2f0;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- NAV ---- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,250,247,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 1px 8px rgba(0,0,0,0.06); }
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 1.75rem; }
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--color-text); text-decoration: none; }
+
+/* ---- SECTION BANDS (full-width colored backgrounds) ---- */
+.section-band {
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section-band.visible { opacity: 1; transform: translateY(0); }
+
+.section-band-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 3.5rem 2.2rem;
+  position: relative;
+}
+
+/* Left accent stripe */
+.section-band-inner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2.2rem;
+  bottom: 2.2rem;
+  width: 3px;
+  border-radius: 3px;
+  opacity: 0.65;
+}
+
+/* Per-section colors */
+.band-experience { background: var(--band-experience); }
+.band-experience .section-band-inner::before { background: var(--stripe-experience); }
+.band-experience .section-label { color: var(--stripe-experience); }
+.band-experience .tag { background: #e8f0eb; color: #2D5A3D; }
+
+.band-education { background: var(--band-education); }
+.band-education .section-band-inner::before { background: var(--stripe-education); }
+.band-education .section-label { color: var(--stripe-education); }
+
+.band-projects { background: var(--band-projects); }
+.band-projects .section-band-inner::before { background: var(--stripe-projects); }
+.band-projects .section-label { color: var(--stripe-projects); }
+.band-projects .tag { background: #f5f0e0; color: #7a5c10; }
+
+.band-publications { background: var(--band-publications); }
+.band-publications .section-band-inner::before { background: var(--stripe-publications); }
+.band-publications .section-label { color: var(--stripe-publications); }
+
+.band-skills { background: var(--band-skills); }
+.band-skills .section-band-inner::before { background: var(--stripe-skills); }
+.band-skills .section-label { color: var(--stripe-skills); }
+.band-skills .pill { background: #e2f0f2; color: #2d6a7a; border-color: #c8e0e6; }
+
+/* ---- SECTION LABEL ---- */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ---- HERO ---- */
+.hero-band {
+  background: var(--band-hero);
+  padding-top: 7rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.hero-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.hero-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  flex-shrink: 0;
+}
+.hero-photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  border: 3px solid var(--color-border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+.hero-text { flex: 1; }
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.hero-bio {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 1.25rem;
+}
+.hero-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.hero-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  text-decoration: none;
+}
+.hero-link svg { width: 14px; height: 14px; }
+
+/* ---- TIMELINE ITEMS (Experience & Education) ---- */
+.timeline-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.timeline-item:last-child { border-bottom: none; }
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  gap: 1rem;
+}
+.timeline-role {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+.timeline-date {
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  font-weight: 500;
+}
+.timeline-org {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.15rem;
+}
+.timeline-org a { color: var(--color-accent); }
+.timeline-location {
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.6rem;
+}
+.timeline-desc {
+  font-size: 0.87rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+.timeline-desc li {
+  margin-bottom: 0.35rem;
+  margin-left: 1.1rem;
+}
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.65rem; }
+.tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  border-radius: 4px;
+  letter-spacing: 0.01em;
+}
+.timeline-degree {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.15rem;
+}
+.timeline-detail {
+  font-size: 0.8rem;
+  color: var(--color-text-tertiary);
+}
+
+/* ---- PROJECT CARDS ---- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.3rem 1.4rem;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  border-top: 3px solid var(--stripe-projects);
+}
+.project-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.35rem;
+  gap: 0.5rem;
+}
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.project-status {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.project-status.ongoing { background: #FEF3C7; color: #92400E; }
+.project-status.completed { background: var(--color-accent-light); color: var(--color-accent); }
+
+.project-desc {
+  font-size: 0.84rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.project-links { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.project-link:hover { text-decoration: underline; }
+.project-link svg { width: 13px; height: 13px; }
+
+/* ---- PUBLICATIONS ---- */
+.pub-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.pub-item:last-child { border-bottom: none; }
+.pub-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+}
+.pub-venue {
+  font-size: 0.82rem;
+  color: var(--color-text-tertiary);
+  font-style: italic;
+  margin-bottom: 0.3rem;
+}
+.pub-authors {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+}
+
+/* ---- SKILLS PILLS ---- */
+.skills-group { margin-bottom: 1.25rem; }
+.skills-group-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+.skills-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pill {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+}
+
+/* ---- VERTICAL JOURNEY TIMELINE ---- */
+.band-journey { background: var(--band-journey); }
+.band-journey .section-band-inner::before { background: var(--stripe-journey); }
+.band-journey .section-label { color: var(--stripe-journey); }
+
+.journey-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-dot.internship { background: var(--tl-internship); }
+.legend-dot.milestone { background: var(--tl-milestone); }
+.legend-dot.education { background: var(--tl-education); }
+
+/* The vertical spine */
+.vtl {
+  position: relative;
+  padding-left: 0;
+}
+.vtl::before {
+  content: '';
+  position: absolute;
+  left: 109px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+/* Each event row */
+.vtl-event {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 70px;
+  padding-bottom: 0.25rem;
+}
+
+/* Date column (left of the line) */
+.vtl-date {
+  width: 95px;
+  flex-shrink: 0;
+  text-align: right;
+  padding-right: 0;
+  padding-top: 0.2rem;
+}
+.vtl-date-main {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+.vtl-date-range {
+  font-size: 0.7rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.1rem;
+}
+
+/* The dot on the line */
+.vtl-dot-col {
+  width: 28px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.3rem;
+  position: relative;
+  z-index: 2;
+}
+.vtl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-border);
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+.vtl-event:hover .vtl-dot {
+  transform: scale(1.25);
+}
+.vtl-dot.internship { background: var(--tl-internship); box-shadow: 0 0 0 2px var(--tl-internship-bg); }
+.vtl-dot.milestone { background: var(--tl-milestone); box-shadow: 0 0 0 2px var(--tl-milestone-bg); }
+.vtl-dot.education { background: var(--tl-education); box-shadow: 0 0 0 2px var(--tl-education-bg); }
+
+/* Content card (right of the line) */
+.vtl-content {
+  flex: 1;
+  padding: 0.5rem 0 1.5rem 0.6rem;
+}
+.vtl-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.vtl-event:hover .vtl-card {
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  border-color: var(--color-border-hover);
+}
+.vtl-card.internship { border-left: 3px solid var(--tl-internship); }
+.vtl-card.milestone { border-left: 3px solid var(--tl-milestone); }
+.vtl-card.education { border-left: 3px solid var(--tl-education); }
+
+.vtl-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+  margin-bottom: 0.15rem;
+}
+.vtl-subtitle {
+  font-size: 0.78rem;
+  color: var(--color-text-tertiary);
+}
+.vtl-date-mobile {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.2rem;
+}
+
+/* Year dividers */
+.vtl-year-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+.vtl-year-label {
+  width: 95px;
+  flex-shrink: 0;
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-tertiary);
+  letter-spacing: -0.01em;
+}
+.vtl-year-line-col {
+  width: 28px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.vtl-year-diamond {
+  width: 10px;
+  height: 10px;
+  background: var(--color-border);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.vtl-year-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  margin-left: 0.6rem;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  padding: 2.5rem 0;
+  background: #1A1A1A;
+  color: #999;
+  text-align: center;
+  font-size: 0.78rem;
+}
+footer a { color: #ccc; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 640px) {
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-layout { flex-direction: column; gap: 1.25rem; }
+  .hero-photo, .hero-photo-placeholder { width: 80px; height: 80px; font-size: 1.6rem; }
+  .timeline-header { flex-direction: column; gap: 0.1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.72rem; }
+  .section-band-inner { padding: 2.5rem 1.5rem 2.5rem 1.8rem; }
+  .hero-band { padding-top: 5.5rem; padding-bottom: 2rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .vtl::before { left: 23px; }
+  .vtl-date { width: 0; overflow: hidden; padding: 0; }
+  .vtl-dot-col { width: 46px; }
+  .vtl-content { padding-left: 0.4rem; }
+  .vtl-date-mobile {
+    display: block !important;
+  }
+  .vtl-year-label { width: 0; overflow: hidden; }
+  .vtl-year-line-col { width: 46px; }
+}
+</style>
 </head>
+<body>
+
+<div id="app"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// ██  PORTFOLIO DATA — EDIT HERE  ██
+// ═══════════════════════════════════════════════════════════════
+// To add/remove items, just add/remove objects from the arrays.
+// To hide a section, set `show: false` on it.
+// ═══════════════════════════════════════════════════════════════
+
+const portfolioData = {
+
+  // ── PERSONAL INFO ──
+  name: "Abhishek Dhaka",
+  tagline: "ML Researcher & Engineer — building intelligent systems at the intersection of language, vision, and healthcare",
+  bio: "CS grad student at UC San Diego with a focus on making large models smaller, faster, and more useful. I've shipped autonomous ventilation models at Noccarc Robotics, published work on low-resource NLP at IIT Guwahati, and built multimodal AI systems that fuse speech, vision, and text. I care about work that moves from paper to production.",
+  photoUrl: "",
+  location: "San Diego, CA",
+  email: "abdhaka@ucsd.edu",
+  links: {
+    linkedin: "https://linkedin.com/in/YOUR-LINKEDIN",   // ← update
+    github: "https://github.com/YOUR-GITHUB",             // ← update
+    resume: "/Abhishek_Resume.pdf",                        // ← update path
+    scholar: "",
+  },
+
+  // ── EXPERIENCE ──
+  experience: {
+    show: true,
+    items: [
+      {
+        role: "ML Engineering Intern",
+        org: "Qualcomm",
+        orgUrl: "https://www.qualcomm.com",
+        location: "San Diego, CA",
+        date: "Summer 2026",
+        bullets: [
+          "Incoming ML Engineering Intern."
+        ],
+        tags: []
+      },
+      {
+        role: "AI Intern",
+        org: "Noccarc Robotics",
+        orgUrl: "https://www.noccarc.com",
+        location: "Pune, India",
+        date: "Feb 2025 – Jun 2025",
+        bullets: [
+          "Led development of an autonomous ventilation model achieving 96% accuracy on simulated data; translated clinician feedback and market research into the R&D roadmap.",
+          "Engineered a physics-based lung/ventilator simulator with PID control and automated firmware sweeps, generating realistic waveforms that cut ML training data collection from months to hours.",
+          "Built a clinician annotation tool for waveform labeling; packaged model experiments and presented results to stakeholders — contributed to a $1.14M raise and earned a pre-placement offer."
+        ],
+        tags: ["PyTorch", "Healthcare AI", "Simulation", "PID Control"]
+      },
+      {
+        role: "ML Research Intern",
+        org: "IIT Guwahati",
+        orgUrl: "",
+        location: "Guwahati, India",
+        date: "Jun 2024 – Jan 2025",
+        supervisor: "Dr. Amit Awekar",
+        bullets: [
+          "Proposed a sliding-window Alignment Adapter (AlAd) mapping compressed embeddings to BERT-base, boosting TinyBERT NER F1 from 0.19 → 0.37 (+95%) at ~6% of BERT size.",
+          "Evaluated across NER, POS, QA and multiple student models with 20% latency overhead and 35–39% faster inference vs. BERT-base.",
+          "Validated cross-architecture compression, recovering up to +16 F1 on downstream tasks while retaining small-model efficiency."
+        ],
+        tags: ["Model Compression", "NER", "BERT", "NLP"],
+        publication: { text: "Accepted at ACM IKDD CODS · Under review at SIGIR 2026", url: "" }
+      },
+      {
+        role: "ML Research Intern",
+        org: "IIT BHU, Varanasi",
+        orgUrl: "",
+        location: "Varanasi, India",
+        date: "Jun 2023 – Oct 2023",
+        supervisor: "Dr. Sukomal Pal",
+        bullets: [
+          "Ranked #2 at HASOC'23 with a hybrid model (mBERT + Siamese BiLSTM + rules), achieving Macro-F1 of 0.7008 for code-mixed hate-speech detection.",
+          "Trained FastText-CNN, BiLSTM-Attn, mBERT/XLM-R/BengaliBERT across 6 low-resource languages, reaching Macro-F1 up to 0.78 (Sinhala), 0.74 (Bodo).",
+          "Built reproducible preprocessing and training pipelines for 20K+ multilingual posts."
+        ],
+        tags: ["Low-resource NLP", "Hate Speech Detection", "mBERT", "Multilingual"],
+        publication: { text: "Published at FIRE 2023 (ACM DL)", url: "" }
+      },
+    ]
+  },
+
+  // ── EDUCATION ──
+  education: {
+    show: true,
+    items: [
+      {
+        school: "University of California, San Diego",
+        degree: "M.S. in Computer Science",
+        date: "Sep 2025 – Jun 2027",
+        location: "San Diego, CA",
+        detail: "Courses: Systems for LLMs, Software Engineering"
+      },
+      {
+        school: "B.K. Birla Institute of Engineering & Technology, Pilani",
+        degree: "B.Tech in Computer Science & Engineering",
+        date: "Oct 2021 – Jun 2025",
+        location: "Pilani, India",
+        detail: "GPA: 3.79/4.0 · Sarla Birla Scholar · Courses: ML, AI, DSA, DBM"
+      }
+    ]
+  },
+
+  // ── PROJECTS ──
+  projects: {
+    show: true,
+    items: [
+      {
+        title: "LLM Inference Relay & Optimization Platform",
+        status: "ongoing",
+        description: "Production-grade LLM serving platform with policy-driven routing (prompt length, latency SLOs, task type), multi-layer caching (exact + semantic via embeddings), and a two-lane scheduler for tail-latency optimization under burst traffic.",
+        githubUrl: "",
+        videoUrl: "",
+        liveUrl: "",
+        tags: ["LLM Serving", "Systems", "Caching", "Optimization"]
+      },
+      {
+        title: "Autonomous AI Operations Agent",
+        status: "ongoing",
+        description: "Agentic system that investigates operational issues via structured tool use, step-by-step reasoning traces, and evidence-grounded explanations. Includes a post-training pipeline (SFT + DPO-style preference optimization) to improve tool selection and grounded reasoning over time.",
+        githubUrl: "",
+        videoUrl: "",
+        liveUrl: "",
+        tags: ["Agentic AI", "SFT", "DPO", "Tool Use"]
+      },
+      {
+        title: "VisionTalk: Multimodal AI Interaction System",
+        status: "completed",
+        description: "Conversational assistant integrating speech-to-text, VQA, object detection, and LLMs to deliver context-aware responses grounded in audio + video signals. Features real-time emotion detection (facial + audio cues) to dynamically adapt dialogue without explicit labels.",
+        githubUrl: "",
+        videoUrl: "",
+        liveUrl: "",
+        tags: ["Multimodal AI", "VQA", "Emotion Detection", "Flask"]
+      },
+      {
+        title: "Medical Query Assistance System",
+        status: "completed",
+        description: "Fine-tuned a domain LLM with LoRA on 1K doctor–patient dialogues + 2K Q&As; deployed 4-bit QLoRA (~65% smaller) for offline CPU-only inference — enabling edge AI in low-connectivity rural clinics. Includes a RAG pipeline combining textbook retrieval with CV on eye/skin images and OCR of medicine labels.",
+        githubUrl: "",
+        videoUrl: "",
+        liveUrl: "",
+        tags: ["Healthcare AI", "LoRA", "RAG", "Edge Deployment"]
+      }
+    ]
+  },
+
+  // ── PUBLICATIONS ──
+  publications: {
+    show: true,
+    items: [
+      {
+        title: "Alignment Adapters for Compressed Language Models",
+        venue: "Accepted at ACM IKDD CODS · Under review at SIGIR 2026",
+        authors: "Abhishek Dhaka, Amit Awekar",
+        url: ""
+      },
+      {
+        title: "Hybrid Hate Speech Detection for Code-Mixed Text",
+        venue: "FIRE 2023 — Published in ACM Digital Library",
+        authors: "Abhishek Dhaka, Sukomal Pal",
+        url: ""
+      }
+    ]
+  },
+
+  // ── SKILLS ──
+  skills: {
+    show: true,
+    groups: [
+      {
+        label: "AI / ML",
+        items: ["LLMs", "NLP", "Multimodal AI", "RAG", "Conversational Agents", "Model Compression"]
+      },
+      {
+        label: "Tools & Frameworks",
+        items: ["Python", "PyTorch", "TensorFlow", "Spark", "SQL", "AWS", "JavaScript", "Node.js"]
+      },
+      {
+        label: "Applied Domains",
+        items: ["Generative AI", "Agentic AI", "Healthcare AI", "Human-Robot Interaction", "Low-resource NLP"]
+      }
+    ]
+  },
+
+  // ── JOURNEY TIMELINE ──
+  // type: "internship" | "milestone" | "education"
+  // For bars (internship/education): provide start and end as "YYYY-MM"
+  // For milestones: provide start only (end is ignored)
+  journey: {
+    show: true,
+    startYear: 2022,  // ← left edge of the chart
+    endYear: 2027,    // ← right edge of the chart
+    items: [
+      { label: "B.Tech — BKBIET Pilani", type: "education", start: "2021-10", end: "2025-06" },
+      { label: "ML Intern — IIT BHU", type: "internship", start: "2023-06", end: "2023-10" },
+      { label: "HASOC'23 — Ranked #2", type: "milestone", start: "2023-10" },
+      { label: "Published at FIRE 2023 (ACM DL)", type: "milestone", start: "2023-12" },
+      { label: "ML Intern — IIT Guwahati", type: "internship", start: "2024-06", end: "2025-01" },
+      { label: "AI Intern — Noccarc Robotics", type: "internship", start: "2025-02", end: "2025-06" },
+      { label: "Paper at ACM IKDD CODS", type: "milestone", start: "2025-03" },
+      { label: "M.S. — UC San Diego", type: "education", start: "2025-09", end: "2027-06" },
+      { label: "ML Intern — Qualcomm", type: "internship", start: "2026-06", end: "2026-09" },
+    ]
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════
+// ██  RENDERING ENGINE — You should NOT need to edit below  ██
+// ═══════════════════════════════════════════════════════════════
+
+const d = portfolioData;
+const initials = d.name.split(' ').map(w => w[0]).join('');
+
+const icons = {
+  email: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>`,
+  linkedin: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
+  github: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`,
+  resume: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+  scholar: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>`,
+  external: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`,
+  video: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
+};
+
+function renderLink(url, icon, label) {
+  if (!url) return '';
+  return `<a href="${url}" class="hero-link" target="_blank" rel="noopener">${icons[icon] || ''}${label}</a>`;
+}
+
+function render() {
+  const heroLinksHtml = [
+    d.email ? `<a href="mailto:${d.email}" class="hero-link">${icons.email}Email</a>` : '',
+    renderLink(d.links.linkedin, 'linkedin', 'LinkedIn'),
+    renderLink(d.links.github, 'github', 'GitHub'),
+    renderLink(d.links.resume, 'resume', 'Resume'),
+    renderLink(d.links.scholar, 'scholar', 'Scholar'),
+  ].join('');
+
+  const photoHtml = d.photoUrl
+    ? `<img src="${d.photoUrl}" alt="${d.name}" class="hero-photo">`
+    : `<div class="hero-photo-placeholder">${initials}</div>`;
+
+  // Experience
+  const expHtml = d.experience?.show ? `
+    <div class="section-band band-experience" id="experience">
+      <div class="section-band-inner">
+        <div class="section-label">Experience</div>
+        ${d.experience.items.map(e => `
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-role">${e.role}</div>
+              <div class="timeline-date">${e.date}</div>
+            </div>
+            <div class="timeline-org">${e.orgUrl ? `<a href="${e.orgUrl}" target="_blank">${e.org}</a>` : e.org}${e.supervisor ? ` · Advisor: ${e.supervisor}` : ''}</div>
+            <div class="timeline-location">${e.location}</div>
+            ${e.publication ? `<div style="font-size:0.8rem;color:var(--stripe-experience);margin-bottom:0.5rem;font-weight:500;">${e.publication.url ? `<a href="${e.publication.url}" target="_blank">${e.publication.text}</a>` : e.publication.text}</div>` : ''}
+            <div class="timeline-desc"><ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul></div>
+            ${e.tags?.length ? `<div class="timeline-tags">${e.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  // Education
+  const eduHtml = d.education?.show ? `
+    <div class="section-band band-education" id="education">
+      <div class="section-band-inner">
+        <div class="section-label">Education</div>
+        ${d.education.items.map(e => `
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-role">${e.school}</div>
+              <div class="timeline-date">${e.date}</div>
+            </div>
+            <div class="timeline-degree">${e.degree}</div>
+            <div class="timeline-location">${e.location}</div>
+            ${e.detail ? `<div class="timeline-detail">${e.detail}</div>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  // Projects
+  const projHtml = d.projects?.show ? `
+    <div class="section-band band-projects" id="projects">
+      <div class="section-band-inner">
+        <div class="section-label">Projects</div>
+        <div class="projects-grid">
+          ${d.projects.items.map(p => `
+            <div class="project-card">
+              <div class="project-top">
+                <div class="project-title">${p.title}</div>
+                <span class="project-status ${p.status}">${p.status === 'ongoing' ? 'Ongoing' : 'Completed'}</span>
+              </div>
+              <div class="project-desc">${p.description}</div>
+              <div class="project-links">
+                ${p.githubUrl ? `<a href="${p.githubUrl}" class="project-link" target="_blank">${icons.github} Code</a>` : ''}
+                ${p.videoUrl ? `<a href="${p.videoUrl}" class="project-link" target="_blank">${icons.video} Demo</a>` : ''}
+                ${p.liveUrl ? `<a href="${p.liveUrl}" class="project-link" target="_blank">${icons.external} Live</a>` : ''}
+              </div>
+              ${p.tags?.length ? `<div class="timeline-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  ` : '';
+
+  // Publications
+  const pubHtml = d.publications?.show ? `
+    <div class="section-band band-publications" id="publications">
+      <div class="section-band-inner">
+        <div class="section-label">Publications</div>
+        ${d.publications.items.map(p => `
+          <div class="pub-item">
+            <div class="pub-title">${p.url ? `<a href="${p.url}" target="_blank">${p.title}</a>` : p.title}</div>
+            <div class="pub-venue">${p.venue}</div>
+            <div class="pub-authors">${p.authors}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  // Skills
+  const skillsHtml = d.skills?.show ? `
+    <div class="section-band band-skills" id="skills">
+      <div class="section-band-inner">
+        <div class="section-label">Skills</div>
+        ${d.skills.groups.map(g => `
+          <div class="skills-group">
+            <div class="skills-group-label">${g.label}</div>
+            <div class="skills-pills">${g.items.map(s => `<span class="pill">${s}</span>`).join('')}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  ` : '';
+
+  // Nav links
+  const navSections = [];
+  if (d.experience?.show) navSections.push(['#experience', 'Experience']);
+  if (d.education?.show) navSections.push(['#education', 'Education']);
+  if (d.projects?.show) navSections.push(['#projects', 'Projects']);
+  if (d.publications?.show) navSections.push(['#publications', 'Papers']);
+  if (d.journey?.show) navSections.push(['#journey', 'Journey']);
+  if (d.links.resume) navSections.push([d.links.resume, 'Resume']);
+
+  // Journey Timeline (vertical)
+  let journeyHtml = '';
+  if (d.journey?.show) {
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function formatYM(ym) {
+      const [y, m] = ym.split('-').map(Number);
+      return `${months[m - 1]} ${y}`;
+    }
+    function sortKey(ym) {
+      const [y, m] = ym.split('-').map(Number);
+      return y * 100 + m;
+    }
+
+    // Sort items newest-first
+    const sorted = [...d.journey.items].sort((a, b) => sortKey(b.start) - sortKey(a.start));
+
+    // Group by year for dividers
+    let lastYear = null;
+    let rowsHtml = '';
+
+    sorted.forEach(item => {
+      const year = parseInt(item.start.split('-')[0]);
+
+      // Insert year divider if new year
+      if (year !== lastYear) {
+        lastYear = year;
+        rowsHtml += `
+          <div class="vtl-year-divider">
+            <div class="vtl-year-label">${year}</div>
+            <div class="vtl-year-line-col"><div class="vtl-year-diamond"></div></div>
+            <div class="vtl-year-rule"></div>
+          </div>`;
+      }
+
+      const dateLabel = item.end ? `${formatYM(item.start)} – ${formatYM(item.end)}` : formatYM(item.start);
+      const shortDate = item.end ? `${formatYM(item.start)}` : formatYM(item.start);
+      const subtitle = item.subtitle || (item.end ? dateLabel : '');
+
+      rowsHtml += `
+        <div class="vtl-event">
+          <div class="vtl-date">
+            <div class="vtl-date-main">${shortDate}</div>
+            ${item.end ? `<div class="vtl-date-range">→ ${formatYM(item.end)}</div>` : ''}
+          </div>
+          <div class="vtl-dot-col">
+            <div class="vtl-dot ${item.type}"></div>
+          </div>
+          <div class="vtl-content">
+            <div class="vtl-card ${item.type}">
+              <div class="vtl-date-mobile" style="display:none">${dateLabel}</div>
+              <div class="vtl-title">${item.label}</div>
+              ${subtitle ? `<div class="vtl-subtitle">${subtitle}</div>` : ''}
+            </div>
+          </div>
+        </div>`;
+    });
+
+    journeyHtml = `
+      <div class="section-band band-journey" id="journey">
+        <div class="section-band-inner">
+          <div class="section-label">Journey</div>
+          <div class="journey-legend">
+            <div class="legend-item"><span class="legend-dot internship"></span>Internships</div>
+            <div class="legend-item"><span class="legend-dot education"></span>Education</div>
+            <div class="legend-item"><span class="legend-dot milestone"></span>Milestones</div>
+          </div>
+          <div class="vtl">
+            ${rowsHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById('app').innerHTML = `
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-name">${d.name.split(' ')[0]}</a>
+        <div class="nav-links">
+          ${navSections.map(([href, label]) => `<a href="${href}">${label}</a>`).join('')}
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-band">
+      <div class="hero-inner">
+        <div class="hero-layout">
+          ${photoHtml}
+          <div class="hero-text">
+            <h1>${d.name}</h1>
+            <div class="hero-tagline">${d.tagline}</div>
+            <div class="hero-bio">${d.bio}</div>
+            <div class="hero-links">${heroLinksHtml}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    ${expHtml}
+    ${eduHtml}
+    ${projHtml}
+    ${pubHtml}
+    ${skillsHtml}
+    ${journeyHtml}
+
+    <footer>
+      <div>${d.name} · ${new Date().getFullYear()} · Built with care, hosted on GitHub Pages</div>
+    </footer>
+  `;
+
+  // Scroll-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section-band').forEach(s => observer.observe(s));
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+}
+
+render();
+</script>
+</body>
 </html>
